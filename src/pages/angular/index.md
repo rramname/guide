@@ -2,7 +2,7 @@
 title: Starting with Angular with Express in Typescript in 10 mins
 ---
 ## Is it for me?
-* Are you a newbie with Express with typescript?
+* Are you a newbie with "Express with typescript"?
 * Are you also in love with typescript and want to do everything in Typescript?
 
 Then please read on...
@@ -19,6 +19,7 @@ We won’t have to switch between editors or terminals for making and watching c
 
 > Please note that this is to setup the development environment. Actual production deployment strategies may vary.
 > Angular 5.2.0 and angular cli 1.7.4 was used for this article.
+
 OK OK.. I get it. Please! Let’s see how it goes!!
 
 *	Set up your angular application using angular cli. Basic instructions can be found at
