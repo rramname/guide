@@ -1,9 +1,10 @@
 ---
-title: Angular with Express in Typescript
+title: Starting with Angular with Express in Typescript in 10 mins
 ---
 ## Is it for me?
-Are you a newbie with Express with typescript?
-Are you also in love with typescript and want to do everything in Typescript?
+* Are you a newbie with Express with typescript?
+* Are you also in love with typescript and want to do everything in Typescript?
+
 Then please read on...
 
 ## What are we trying to achieve here?
@@ -17,16 +18,16 @@ You will have only one package.json file to maintain.
 We won’t have to switch between editors or terminals for making and watching changes.
 
 > Please note that this is to setup the development environment. Actual production deployment strategies may vary.
-
+> Angular 5.2.0 and angular cli 1.7.4 was used for this article.
 OK OK.. I get it. Please! Let’s see how it goes!!
 
 *	Set up your angular application using angular cli. Basic instructions can be found at
  https://cli.angular.io/
 *	For this application, we will not be using test framework but its always recommended to add tests for your project. Dry Run will first provide snapshot of the files and folder structure that cli will generate without actually creating any physical file. It’s always a better idea to run the command with –dry-run first.
   ```
-  ng new AngularWithExpress –skip-test –dry-run
+  ng new AngularWithExpress –-skip-tests --dry-run
 ```
-* If everything looks good and we go ahead and remove the –dry-run flag from the command and execute.
+* If everything looks good and we go ahead and remove the -–dry-run flag from the command and execute.
  This will give us our angular application with its folder structure.
 *	CD into the project so that we can get access to node_modules
   ```
@@ -54,7 +55,7 @@ npm install --save @types/express @types/es6-shim
 * Please note that we don’t have to install typescript as its already install by the angular app created in first step.
 * Let’s create a separate folder at root level (where src folder or angular app resides) for all of our Express related files and call it as MiddleTier.
 * Add our main file for express app in this folder.
-	  Server.ts
+	  server.ts
 * Add below code to start the server. This is just a basic code required by express.
  
  ```
@@ -69,15 +70,16 @@ class app{
             console.log("express server started")
         })
     }
-
 }
+export default new app().express;
+
 ```
 * OK. Now we have our express main file in typescript but we have to compile it in order to get it working.
 * The next part is compiling and starting the server and then our angular application. And for this, we will be using gulp.
 
 * We need below dev dependencies
  ```
- Npm install gulp gulp-nodemon  gulp-run gulp-typescript –save
+ Npm install --save gulp gulp-nodemon  gulp-run gulp-typescript
  ```
 * Add gulp file to the root
   Gulpfile.js
@@ -141,7 +143,7 @@ gulp.task('StartServer',['compile','start','ui'],function(cb){
  
  ```
 
-* It should compile the server file, start server at port 3000, serve the angular application at port 4200.
+* It should compile the server.ts file, save it under ./server/ folder, start server at port 3000 and serve the angular application at port 4200.
 
 * After this step, if you make a change in Angular App, only angular app will be refreshed and server will restart for each change related to express.
 
